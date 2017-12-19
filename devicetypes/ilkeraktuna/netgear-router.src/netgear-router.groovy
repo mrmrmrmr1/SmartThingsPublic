@@ -33,7 +33,7 @@ metadata {
         attribute "Wifi5Ghz", "string"
         attribute "w5ghz", "string"
         attribute "w2ghz", "string"
-        attribute "gad", "string"
+//        attribute "gad", "string"
         attribute "reboot", "string"
 
 		command "WirelessOn"
@@ -105,21 +105,523 @@ metadata {
         valueTile("w2ghz", "device.w2ghz", decoration: "flat", width: 2, height: 1) {
 			state ("default", label:'${currentValue}')
 		}
-		standardTile( "refreshall", "device.power", decoration: "flat", width: 2, height: 2) {
+		standardTile( "refreshall", "device.power", decoration: "flat", width: 2, height: 1) {
 			state "default", label:'refresh', action: "GetAll", icon:"st.secondary.refresh", nextState: "default"
 		}
-		standardTile( "attached", "device.attached", decoration: "flat", width: 2, height: 2) {
+		standardTile( "attached", "device.attached", decoration: "flat", width: 4, height: 1) {
 			state "default", label:'Get Attached Devices', action: "GetAttached", icon:"st.secondary.refresh", nextState: "default"
 		}
-        standardTile("gad", "device.gad", decoration: "flat", width: 4, height: 6) {
-			state ("default", label:'${currentValue}')
-		}
+//        standardTile("gad", "device.gad", decoration: "flat", width: 4, height: 4) {
+//			state ("default", label:'${currentValue}')
+//		}
+standardTile("gadd1", "device.gadd1", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad1", "device.gad1", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade1", "device.gade1", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf1", "device.gadf1", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd2", "device.gadd2", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad2", "device.gad2", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade2", "device.gade2", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf2", "device.gadf2", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd3", "device.gadd3", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad3", "device.gad3", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade3", "device.gade3", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf3", "device.gadf3", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd4", "device.gadd4", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad4", "device.gad4", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade4", "device.gade4", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf4", "device.gadf4", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd5", "device.gadd5", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad5", "device.gad5", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade5", "device.gade5", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf5", "device.gadf5", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd6", "device.gadd6", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad6", "device.gad6", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade6", "device.gade6", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf6", "device.gadf6", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd7", "device.gadd7", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad7", "device.gad7", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade7", "device.gade7", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf7", "device.gadf7", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd8", "device.gadd8", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad8", "device.gad8", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade8", "device.gade8", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf8", "device.gadf8", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd9", "device.gadd9", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad9", "device.gad9", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade9", "device.gade9", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf9", "device.gadf9", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd10", "device.gadd10", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad10", "device.gad10", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade10", "device.gade10", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf10", "device.gadf10", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd11", "device.gadd11", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad11", "device.gad11", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade11", "device.gade11", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf11", "device.gadf11", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd12", "device.gadd12", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad12", "device.gad12", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade12", "device.gade12", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf12", "device.gadf12", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd13", "device.gadd13", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad13", "device.gad13", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade13", "device.gade13", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf13", "device.gadf13", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd14", "device.gadd14", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad14", "device.gad14", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade14", "device.gade14", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf14", "device.gadf14", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd15", "device.gadd15", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad15", "device.gad15", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade15", "device.gade15", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf15", "device.gadf15", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd16", "device.gadd16", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad16", "device.gad16", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade16", "device.gade16", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf16", "device.gadf16", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd17", "device.gadd17", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad17", "device.gad17", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade17", "device.gade17", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf17", "device.gadf17", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd18", "device.gadd18", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad18", "device.gad18", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade18", "device.gade18", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf18", "device.gadf18", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd19", "device.gadd19", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad19", "device.gad19", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade19", "device.gade19", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf19", "device.gadf19", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd20", "device.gadd20", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad20", "device.gad20", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade20", "device.gade20", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf20", "device.gadf20", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd21", "device.gadd21", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad21", "device.gad21", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade21", "device.gade21", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf21", "device.gadf21", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd22", "device.gadd22", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad22", "device.gad22", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade22", "device.gade22", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf22", "device.gadf22", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd23", "device.gadd23", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad23", "device.gad23", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade23", "device.gade23", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf23", "device.gadf23", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd24", "device.gadd24", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad24", "device.gad24", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade24", "device.gade24", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf24", "device.gadf24", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd25", "device.gadd25", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad25", "device.gad25", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade25", "device.gade25", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf25", "device.gadf25", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd26", "device.gadd26", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad26", "device.gad26", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade26", "device.gade26", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf26", "device.gadf26", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd27", "device.gadd27", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad27", "device.gad27", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade27", "device.gade27", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf27", "device.gadf27", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd28", "device.gadd28", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad28", "device.gad28", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade28", "device.gade28", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf28", "device.gadf28", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd29", "device.gadd29", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad29", "device.gad29", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade29", "device.gade29", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf29", "device.gadf29", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd30", "device.gadd30", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad30", "device.gad30", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade30", "device.gade30", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf30", "device.gadf30", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd31", "device.gadd31", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad31", "device.gad31", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade31", "device.gade31", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf31", "device.gadf31", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd32", "device.gadd32", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad32", "device.gad32", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade32", "device.gade32", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf32", "device.gadf32", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd33", "device.gadd33", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad33", "device.gad33", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade33", "device.gade33", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf33", "device.gadf33", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd34", "device.gadd34", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad34", "device.gad34", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade34", "device.gade34", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf34", "device.gadf34", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd35", "device.gadd35", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad35", "device.gad35", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade35", "device.gade35", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf35", "device.gadf35", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd36", "device.gadd36", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad36", "device.gad36", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade36", "device.gade36", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf36", "device.gadf36", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd37", "device.gadd37", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad37", "device.gad37", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade37", "device.gade37", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf37", "device.gadf37", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd38", "device.gadd38", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad38", "device.gad38", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade38", "device.gade38", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf38", "device.gadf38", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd39", "device.gadd39", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad39", "device.gad39", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade39", "device.gade39", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf39", "device.gadf39", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd40", "device.gadd40", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad40", "device.gad40", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade40", "device.gade40", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf40", "device.gadf40", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd41", "device.gadd41", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad41", "device.gad41", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade41", "device.gade41", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf41", "device.gadf41", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd42", "device.gadd42", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad42", "device.gad42", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade42", "device.gade42", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf42", "device.gadf42", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd43", "device.gadd43", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad43", "device.gad43", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade43", "device.gade43", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf43", "device.gadf43", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd44", "device.gadd44", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad44", "device.gad44", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade44", "device.gade44", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf44", "device.gadf44", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd45", "device.gadd45", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad45", "device.gad45", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade45", "device.gade45", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf45", "device.gadf45", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd46", "device.gadd46", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad46", "device.gad46", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade46", "device.gade46", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf46", "device.gadf46", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd47", "device.gadd47", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad47", "device.gad47", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade47", "device.gade47", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf47", "device.gadf47", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd48", "device.gadd48", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad48", "device.gad48", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade48", "device.gade48", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf48", "device.gadf48", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd49", "device.gadd49", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad49", "device.gad49", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade49", "device.gade49", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf49", "device.gadf49", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadd50", "device.gadd50", width: 1, height: 1) {
+state ("default", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ffffff") 
+state ("wiredok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#79b821") 
+state ("wirelessok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#79b821") 
+state ("wirednok", label:'', icon: "st.Electronics.electronics6", backgroundColor: "#ff0000") 
+state ("wirelessnok", label:'', icon: "st.Entertainment.entertainment15", backgroundColor: "#ff0000") 
+}
+standardTile("gad50", "device.gad50", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gade50", "device.gade50", width: 2, height: 1) {state ("default", label:'${currentValue}')}
+standardTile("gadf50", "device.gadf50", width: 1, height: 1) {state ("default", label:'${currentValue}')}
+
         standardTile( "reboot", "device.reboot", inactiveLabel: false, decoration: "flat", width: 2, height: 2, canChangeIcon: true) {
         	state "enabled", label: 'Reboot', action: "Reboot", icon: "st.samsung.da.RC_ic_power", backgroundColor: "#79b821"
 			state "disabled", label: 'Reboot\n(disabled)', action: "", icon: "st.samsung.da.RC_ic_power", backgroundColor: "#ffffff"
 		}
+        
 		main "GuestWifi2Ghz"
-		details(["GuestWifi5Ghz","GuestWifi2Ghz","refresh","5ghz","2ghz","Wifi5Ghz","Wifi2Ghz","refreshall","w5ghz","w2ghz","attached","gad","reboot"])
+		details(["GuestWifi5Ghz","GuestWifi2Ghz","refresh","5ghz","2ghz","Wifi5Ghz","Wifi2Ghz","reboot","w5ghz","w2ghz","refreshall","attached","gadd1","gad1","gade1","gadf1","gadd2","gad2","gade2","gadf2","gadd3","gad3","gade3","gadf3","gadd4","gad4","gade4","gadf4","gadd5","gad5","gade5","gadf5","gadd6","gad6","gade6","gadf6","gadd7","gad7","gade7","gadf7","gadd8","gad8","gade8","gadf8","gadd9","gad9","gade9","gadf9","gadd10","gad10","gade10","gadf10","gadd11","gad11","gade11","gadf11","gadd12","gad12","gade12","gadf12","gadd13","gad13","gade13","gadf13","gadd14","gad14","gade14","gadf14","gadd15","gad15","gade15","gadf15","gadd16","gad16","gade16","gadf16","gadd17","gad17","gade17","gadf17","gadd18","gad18","gade18","gadf18","gadd19","gad19","gade19","gadf19","gadd20","gad20","gade20","gadf20","gadd21","gad21","gade21","gadf21","gadd22","gad22","gade22","gadf22","gadd23","gad23","gade23","gadf23","gadd24","gad24","gade24","gadf24","gadd25","gad25","gade25","gadf25","gadd26","gad26","gade26","gadf26","gadd27","gad27","gade27","gadf27","gadd28","gad28","gade28","gadf28","gadd29","gad29","gade29","gadf29","gadd30","gad30","gade30","gadf30","gadd31","gad31","gade31","gadf31","gadd32","gad32","gade32","gadf32","gadd33","gad33","gade33","gadf33","gadd34","gad34","gade34","gadf34","gadd35","gad35","gade35","gadf35","gadd36","gad36","gade36","gadf36","gadd37","gad37","gade37","gadf37","gadd38","gad38","gade38","gadf38","gadd39","gad39","gade39","gadf39","gadd40","gad40","gade40","gadf40","gadd41","gad41","gade41","gadf41","gadd42","gad42","gade42","gadf42","gadd43","gad43","gade43","gadf43","gadd44","gad44","gade44","gadf44","gadd45","gad45","gade45","gadf45","gadd46","gad46","gade46","gadf46","gadd47","gad47","gade47","gadf47","gadd48","gad48","gade48","gadf48","gadd49","gad49","gade49","gadf49","gadd50","gad50","gade50","gadf50"])
         
 	}
 }
@@ -191,15 +693,24 @@ def parse(String description) {
 
 private parsegad(rororo) {
 	def devlines = []
-    def devicelist
+    //def devicelist
+    //def tmpdev
     devlines = rororo.split('@')
-    devicelist="Name\tIPADDR\tMACADDR\tConnected\tAccess\n"
+    //devicelist="Name\tIPADDR\tMACADDR\tConnected\tAccess\n"
 	for (int i = 1; i <  devlines.length; i++){
     def linetmp = []
     linetmp = devlines[i].split(';')
-    devicelist=devicelist + linetmp[2] + "\t" + linetmp[1] + "\t" + linetmp[3] + "\t" + linetmp[4] + "\t" + linetmp[7] + "\n"
+    //devicelist=devicelist + linetmp[2] + "\t" + linetmp[1] + "\t" + linetmp[3] + "\t" + linetmp[4] + "\t" + linetmp[7] + "\n"
+    //tmpdev=linetmp[2] + "\t" + linetmp[1] + "\t" + linetmp[3] + "\n"
+    sendEvent(name: "gad$i", value: "${linetmp[2]}", isStateChange: true, displayed: false)
+    sendEvent(name: "gade$i", value: "${linetmp[1]}", isStateChange: true, displayed: false)
+    sendEvent(name: "gadf$i", value: "${linetmp[3]}", isStateChange: true, displayed: false)
+    if (linetmp[4] == "wired" && linetmp[7] == "Allow") {sendEvent(name: "gadd$i", value: "wiredok", isStateChange: true, displayed: false) }
+    if (linetmp[4] == "wireless" && linetmp[7] == "Allow") {sendEvent(name: "gadd$i", value: "wirelessok", isStateChange: true, displayed: false) }
+    if (linetmp[4] == "wired" && linetmp[7] != "Allow") {sendEvent(name: "gadd$i", value: "wirednok", isStateChange: true, displayed: false) }
+    if (linetmp[4] == "wireless" && linetmp[7] != "Allow") {sendEvent(name: "gadd$i", value: "wirelessnok", isStateChange: true, displayed: false) }
     }
-    sendEvent(name: "gad", value: "$devicelist", isStateChange: true, displayed: false)
+    //sendEvent(name: "gad", value: "$devicelist", isStateChange: true, displayed: false)
 }
 
 def parseDescriptionAsMap(description) {
