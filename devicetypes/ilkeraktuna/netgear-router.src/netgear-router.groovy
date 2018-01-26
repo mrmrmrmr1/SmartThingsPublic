@@ -46,7 +46,10 @@ metadata {
 		command "GuestWirelessOff5"
         command "GetAll"
         command "GetAttached"
+        command "GetStats"
         command "Reboot"
+        command "refresh"
+        command "genGraph"
 	}
 
     preferences {
@@ -105,11 +108,12 @@ metadata {
         valueTile("w2ghz", "device.w2ghz", decoration: "flat", width: 2, height: 1) {
 			state ("default", label:'${currentValue}')
 		}
-		standardTile( "refreshall", "device.power", decoration: "flat", width: 2, height: 1) {
-			state "default", label:'refresh', action: "GetAll", icon:"st.secondary.refresh", nextState: "default"
+		standardTile( "refreshall", "device.power", decoration: "flat", width: 3, height: 1) {
+			state "default", label:'Get Traffic Graph', action: "genGraph", icon:"st.secondary.refresh", nextState: "default"
 		}
-		standardTile( "attached", "device.attached", decoration: "flat", width: 4, height: 1) {
+		standardTile( "attached", "device.attached", decoration: "flat", width: 3, height: 1) {
 			state "default", label:'Get Attached Devices', action: "GetAttached", icon:"st.secondary.refresh", nextState: "default"
+			//state "default", label:'Get Attached Devices', action: "genGraph", icon:"st.secondary.refresh", nextState: "default"
 		}
 //        standardTile("gad", "device.gad", decoration: "flat", width: 4, height: 4) {
 //			state ("default", label:'${currentValue}')
@@ -619,9 +623,11 @@ standardTile("gadf50", "device.gadf50", width: 1, height: 1) {state ("default", 
         	state "enabled", label: 'Reboot', action: "Reboot", icon: "st.samsung.da.RC_ic_power", backgroundColor: "#79b821"
 			state "disabled", label: 'Reboot\n(disabled)', action: "", icon: "st.samsung.da.RC_ic_power", backgroundColor: "#ffffff"
 		}
-        
+
+carouselTile("pieChart", "device.image", width: 6, height: 4) { }
+
 		main "GuestWifi2Ghz"
-		details(["GuestWifi5Ghz","GuestWifi2Ghz","refresh","5ghz","2ghz","Wifi5Ghz","Wifi2Ghz","reboot","w5ghz","w2ghz","refreshall","attached","gadd1","gad1","gade1","gadf1","gadd2","gad2","gade2","gadf2","gadd3","gad3","gade3","gadf3","gadd4","gad4","gade4","gadf4","gadd5","gad5","gade5","gadf5","gadd6","gad6","gade6","gadf6","gadd7","gad7","gade7","gadf7","gadd8","gad8","gade8","gadf8","gadd9","gad9","gade9","gadf9","gadd10","gad10","gade10","gadf10","gadd11","gad11","gade11","gadf11","gadd12","gad12","gade12","gadf12","gadd13","gad13","gade13","gadf13","gadd14","gad14","gade14","gadf14","gadd15","gad15","gade15","gadf15","gadd16","gad16","gade16","gadf16","gadd17","gad17","gade17","gadf17","gadd18","gad18","gade18","gadf18","gadd19","gad19","gade19","gadf19","gadd20","gad20","gade20","gadf20","gadd21","gad21","gade21","gadf21","gadd22","gad22","gade22","gadf22","gadd23","gad23","gade23","gadf23","gadd24","gad24","gade24","gadf24","gadd25","gad25","gade25","gadf25","gadd26","gad26","gade26","gadf26","gadd27","gad27","gade27","gadf27","gadd28","gad28","gade28","gadf28","gadd29","gad29","gade29","gadf29","gadd30","gad30","gade30","gadf30","gadd31","gad31","gade31","gadf31","gadd32","gad32","gade32","gadf32","gadd33","gad33","gade33","gadf33","gadd34","gad34","gade34","gadf34","gadd35","gad35","gade35","gadf35","gadd36","gad36","gade36","gadf36","gadd37","gad37","gade37","gadf37","gadd38","gad38","gade38","gadf38","gadd39","gad39","gade39","gadf39","gadd40","gad40","gade40","gadf40","gadd41","gad41","gade41","gadf41","gadd42","gad42","gade42","gadf42","gadd43","gad43","gade43","gadf43","gadd44","gad44","gade44","gadf44","gadd45","gad45","gade45","gadf45","gadd46","gad46","gade46","gadf46","gadd47","gad47","gade47","gadf47","gadd48","gad48","gade48","gadf48","gadd49","gad49","gade49","gadf49","gadd50","gad50","gade50","gadf50"])
+		details(["GuestWifi5Ghz","GuestWifi2Ghz","refresh","5ghz","2ghz","Wifi5Ghz","Wifi2Ghz","reboot","w5ghz","w2ghz","refreshall","attached","pieChart","gadd1","gad1","gade1","gadf1","gadd2","gad2","gade2","gadf2","gadd3","gad3","gade3","gadf3","gadd4","gad4","gade4","gadf4","gadd5","gad5","gade5","gadf5","gadd6","gad6","gade6","gadf6","gadd7","gad7","gade7","gadf7","gadd8","gad8","gade8","gadf8","gadd9","gad9","gade9","gadf9","gadd10","gad10","gade10","gadf10","gadd11","gad11","gade11","gadf11","gadd12","gad12","gade12","gadf12","gadd13","gad13","gade13","gadf13","gadd14","gad14","gade14","gadf14","gadd15","gad15","gade15","gadf15","gadd16","gad16","gade16","gadf16","gadd17","gad17","gade17","gadf17","gadd18","gad18","gade18","gadf18","gadd19","gad19","gade19","gadf19","gadd20","gad20","gade20","gadf20","gadd21","gad21","gade21","gadf21","gadd22","gad22","gade22","gadf22","gadd23","gad23","gade23","gadf23","gadd24","gad24","gade24","gadf24","gadd25","gad25","gade25","gadf25","gadd26","gad26","gade26","gadf26","gadd27","gad27","gade27","gadf27","gadd28","gad28","gade28","gadf28","gadd29","gad29","gade29","gadf29","gadd30","gad30","gade30","gadf30","gadd31","gad31","gade31","gadf31","gadd32","gad32","gade32","gadf32","gadd33","gad33","gade33","gadf33","gadd34","gad34","gade34","gadf34","gadd35","gad35","gade35","gadf35","gadd36","gad36","gade36","gadf36","gadd37","gad37","gade37","gadf37","gadd38","gad38","gade38","gadf38","gadd39","gad39","gade39","gadf39","gadd40","gad40","gade40","gadf40","gadd41","gad41","gade41","gadf41","gadd42","gad42","gade42","gadf42","gadd43","gad43","gade43","gadf43","gadd44","gad44","gade44","gadf44","gadd45","gad45","gade45","gadf45","gadd46","gad46","gade46","gadf46","gadd47","gad47","gade47","gadf47","gadd48","gad48","gade48","gadf48","gadd49","gad49","gade49","gadf49","gadd50","gad50","gade50","gadf50"])
         
 	}
 }
@@ -642,6 +648,15 @@ def poll(){
 
 def initialize() {
     //refreshCmd()
+    state.listdl = []
+    state.listul = []
+    state.listt = []
+    state.sdl = 0
+    state.sul = 0
+    state.min = 0
+    state.sdle = 0
+    state.sule = 0
+    state.mine = 0
     refresh()
 }
 
@@ -688,7 +703,63 @@ def parse(String description) {
     //sendEvent(name: "2ghz", value: "$state.ssid2", isStateChange: true, displayed: false)
     //log.debug "attached: $state.attacheddev"
     }
- 
+    if (xmlt.'*'.'m:GetTrafficMeterStatisticsResponse'.NewTodayConnectionTime.text() != null && xmlt.'*'.'m:GetTrafficMeterStatisticsResponse'.NewTodayConnectionTime.text() != "") {
+ 	def smin = xmlt.'*'.'m:GetTrafficMeterStatisticsResponse'.NewTodayConnectionTime.text()
+    def sdl = xmlt.'*'.'m:GetTrafficMeterStatisticsResponse'.NewTodayDownload.text()
+ 	def sul = xmlt.'*'.'m:GetTrafficMeterStatisticsResponse'.NewTodayUpload.text()
+    def sminp = smin.split(":")
+	state.min = sminp[1].toInteger()+sminp[0].toInteger()*60 
+    state.sdl = sdl.tokenize(".")[0].toInteger() 
+    state.sul = sul.tokenize(".")[0].toInteger()    
+	if (state.sdle == 0) {state.sdle = state.sdl}
+	if (state.sule == 0) {state.sule = state.sul}
+	if (state.mine == 0) {state.mine = state.min}
+	if (state.min == 0) {state.min = 1}
+    
+    def dlf = state.sdl-state.sdle
+    def ulf = state.sul-state.sule
+    def mf = state.min-state.mine
+
+	def tlist = []
+    state.listdl.push(dlf*8192/(60*mf))
+    log.debug state.listdl
+    for (int i = 1; i <  145; i++){
+    if (state.listdl[i] == null || state.listdl[i] <0 ) { tlist.push(0) }
+    else     tlist.push(state.listdl[i])
+    }
+    state.listdl=tlist
+
+    tlist = []
+    state.listul.push(ulf*8192/(60*mf))
+    for (int i = 1; i <  145; i++){
+    if (state.listul[i] == null || state.listul[i] <0) { tlist.push(0) }
+    else     tlist.push(state.listul[i])
+    }
+    state.listul=tlist
+    
+	tlist = []
+    state.listt.push(state.min-state.mine)
+    for (int i = 1; i <  145; i++){
+    if (state.listt[i] == null) { tlist.push(0) }
+    else     tlist.push(state.listt[i])
+    }
+    state.listt=tlist
+	/*
+    log.debug state.sdl
+    log.debug state.sul
+    log.debug state.min
+	log.debug state.sdle
+    log.debug state.sule
+    log.debug state.mine
+    
+    log.debug state.listul
+    log.debug state.listdl
+    */
+	state.sdle = state.sdl
+    state.sule = state.sul
+    state.mine = state.min
+	genGraph()
+    }
 }
 
 private parsegad(rororo) {
@@ -710,6 +781,7 @@ private parsegad(rororo) {
     if (linetmp[4] == "wired" && linetmp[7] != "Allow") {sendEvent(name: "gadd$i", value: "wirednok", isStateChange: true, displayed: false) }
     if (linetmp[4] == "wireless" && linetmp[7] != "Allow") {sendEvent(name: "gadd$i", value: "wirelessnok", isStateChange: true, displayed: false) }
     }
+    //state.devl = devicelist
     //sendEvent(name: "gad", value: "$devicelist", isStateChange: true, displayed: false)
 }
 
@@ -777,13 +849,16 @@ def GetAttached() {
 return [authrouter(), delayAction(9800), getattacheddev()]
 }
 
+def GetStats() {
+return [authrouter(), delayAction(9800), getstats()]
+}
+
 def Reboot() {
 return [authrouter(), delayAction(9800), configStarted(), delayAction(9800), rebootoff(), delayAction(9800), configFinished()]
 }
 
 def refresh() {
 	//log.debug "Executing refreshCmd"
-	
     if (ren == true) {
     sendEvent(name: "reboot", value: "enabled", isStateChange: true, displayed: false)
     }
@@ -801,7 +876,7 @@ def refresh() {
     //return gwgetall()
     //return infoall
     //return GetAll()
-    return [gwget(), delayAction(1000), gwget5(), delayAction(1000), gwinfo(), delayAction(1000), gwinfo5(), delayAction(1000), gwinfo5(), delayAction(1000), wifi2stat(), delayAction(1000), wifi5stat()]
+    return [authrouter(), delayAction(1000), gwget(), delayAction(1000), gwget5(), delayAction(1000), gwinfo(), delayAction(1000), gwinfo5(), delayAction(1000), gwinfo5(), delayAction(1000), wifi2stat(), delayAction(1000), wifi5stat(), delayAction(1000), getstats()]
     
 }
 
@@ -884,6 +959,38 @@ private getattacheddev() {
 <SOAP-ENV:Body>
 <M1:GetAttachDevice xmlns:M1="urn:NETGEAR-ROUTER:service:DeviceInfo:1">
 </M1:GetAttachDevice>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>"""
+
+    def hubAction = new physicalgraph.device.HubAction(
+    	method: method,
+    	path: path,
+    	headers: headers,
+        body: body
+        )
+    hubAction
+    }
+    catch (Exception e) {
+    	log.debug "Hit Exception $e on $hubAction"
+    }
+}
+
+private getstats() {
+	def host = "$ip:$port"
+    def method = "POST"
+    def path = "/soap/server_sa/"   
+    def headers = [:] 
+    headers.put("HOST", "$host")
+    headers.put("SOAPAction", "urn:NETGEAR-ROUTER:service:DeviceConfig:1#GetTrafficMeterStatistics")
+	headers.put("content-type", "text/xml;charset=utf-8")
+    try {
+    def body="""<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<SOAP-ENV:Envelope xmlns:SOAPSDK1="http://www.w3.org/2001/XMLSchema" xmlns:SOAPSDK2="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAPSDK3="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+<SOAP-ENV:Header>
+<SessionID>58DEE6006A88A967E89A</SessionID>
+</SOAP-ENV:Header>
+<SOAP-ENV:Body>
+<M1:GetTrafficMeterStatistics xmlns:M1="urn:NETGEAR-ROUTER:service:DeviceConfig:1"></M1:GetTrafficMeterStatistics>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>"""
 
@@ -1501,4 +1608,55 @@ private Integer convertHexToInt(hex) {
 
 private String convertHexToIP(hex) {
     return [convertHexToInt(hex[0..1]),convertHexToInt(hex[2..3]),convertHexToInt(hex[4..5]),convertHexToInt(hex[6..7])].join(".")
+}
+
+
+def genGraph()
+{
+	def dl ="t:"
+    def ul ="t:"
+    def tt ="t:"
+    for (int i = 0; i <  143; i++){
+    dl = dl + state.listdl[i] + ","
+    }
+    dl = dl + state.listdl[143] + "|"
+    for (int i = 0; i <  143; i++){
+    dl = dl + state.listul[i] + ","
+    }
+    dl = dl + state.listul[143]
+
+    def maxx = state.listdl.max()
+    def aralik = maxx/5
+       def podParams = [
+          uri: "https://chart.googleapis.com",
+          path: "/chart",
+          query: [cht: "lc", chd: dl, chs: "400x250", chof: "gif", chxt: "x,y", chco: "00FF00,0000FF", chtt:"Traffic", chts:"AAAAAA", chxr:"0,-24,0,4|1,0,"+maxx+","+aralik+"50" ],
+          contentType: 'image/gif'
+        ]
+        httpGet(podParams) { resp ->
+            //log.debug resp.data
+            saveImage(resp.data)
+        }
+        //log.debug "Created new graph"
+
+}
+
+def saveImage(image) {
+    //log.trace "Saving image to S3"
+
+    // Send the image to an App who wants to consume it via an event as a Base64 String
+    def bytes = image.buf
+    //log.debug "JPEG Data Size: ${bytes.size()}"
+    String str = bytes.encodeBase64()
+    sendEvent(name: "imageDataJpeg", value: str, displayed: false, isStateChange: true)
+
+    // Now save it to the S3 cloud, do this in the end since it removes the data from the object leaving it empty
+    storeImage(getPictureName(), image)
+
+    return null
+}
+
+private getPictureName() {
+    def pictureUuid = java.util.UUID.randomUUID().toString().replaceAll('-', '')
+    "image" + "_$pictureUuid" + ".jpg"
 }
