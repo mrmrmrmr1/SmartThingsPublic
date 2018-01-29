@@ -720,9 +720,10 @@ def parse(String description) {
     def ulf = state.sul-state.sule
     def mf = state.min-state.mine
 
+	if (mf == 0) {mf = 1}
+
 	def tlist = []
-    state.listdl.push(dlf*8192/(60*mf))
-    log.debug state.listdl
+    state.listdl.push(dlf*8/(60*mf))
     for (int i = 1; i <  145; i++){
     if (state.listdl[i] == null || state.listdl[i] <0 ) { tlist.push(0) }
     else     tlist.push(state.listdl[i])
@@ -730,7 +731,7 @@ def parse(String description) {
     state.listdl=tlist
 
     tlist = []
-    state.listul.push(ulf*8192/(60*mf))
+    state.listul.push(ulf*8/(60*mf))
     for (int i = 1; i <  145; i++){
     if (state.listul[i] == null || state.listul[i] <0) { tlist.push(0) }
     else     tlist.push(state.listul[i])
@@ -744,11 +745,16 @@ def parse(String description) {
     else     tlist.push(state.listt[i])
     }
     state.listt=tlist
-	/*
-    log.debug state.sdl
+
+/*
+    log.debug "yeni dl $state.sdl"
+	log.debug "eski dl $state.sdle"
+    log.debug "yeni min $state.min"
+    log.debug "eski min $state.mine"
+    log.debug state.listdl
+
     log.debug state.sul
     log.debug state.min
-	log.debug state.sdle
     log.debug state.sule
     log.debug state.mine
     
@@ -1620,17 +1626,22 @@ def genGraph()
     dl = dl + state.listdl[i] + ","
     }
     dl = dl + state.listdl[143] + "|"
-    for (int i = 0; i <  143; i++){
+
+	for (int i = 0; i <  143; i++){
     dl = dl + state.listul[i] + ","
     }
     dl = dl + state.listul[143]
 
-    def maxx = state.listdl.max()
+    def maxx = Math.round(state.listdl.max())
+    
     def aralik = maxx/5
+    
+    
        def podParams = [
-          uri: "https://chart.googleapis.com",
+          //uri: "https://chart.googleapis.com",
+          uri: "https://image-charts.com",
           path: "/chart",
-          query: [cht: "lc", chd: dl, chs: "400x250", chof: "gif", chxt: "x,y", chco: "00FF00,0000FF", chtt:"Traffic", chts:"AAAAAA", chxr:"0,-24,0,4|1,0,"+maxx+","+aralik+"50" ],
+          query: [cht: "lc", chd: dl, chs: "400x250", chof: "gif", chxt: "x,y", chco: "00FF00,0000FF", chtt: "Traffic", chts:"AAAAAA,15", chxr:"0,0,144,1|1,0,"+maxx+","+aralik, ],
           contentType: 'image/gif'
         ]
         httpGet(podParams) { resp ->
@@ -1638,7 +1649,6 @@ def genGraph()
             saveImage(resp.data)
         }
         //log.debug "Created new graph"
-
 }
 
 def saveImage(image) {
